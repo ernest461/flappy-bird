@@ -2,16 +2,16 @@
 let move_speed = 5;
   
 // Gravity constant value
-let gravity = 0.5;
+let gravity = 0.2;
 
 const coins = ['eth', 'btc', 'sol', 'cat', 'chart', 'money'];
 
 let score_value = 0;
 
-const gold_score = 10;
-const silver_score = 8;
-const bronze_score = 5;
-const diamond_score = 15;
+const gold_score = 100;
+const silver_score = 80;
+const bronze_score = 50;
+const diamond_score = 150;
   
 // Getting reference to the bird element
 let bird = document.querySelector('.bird');
@@ -32,6 +32,9 @@ let score_title =
   
 // Setting initial game state to start
 let game_state = 'Start';
+let birdAnimationInterval; 
+
+let bird_dy = 0;
 
 document.querySelector('.menu-button').addEventListener('click', function() {
   const menu = document.querySelector('.menu');
@@ -63,7 +66,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-let birdAnimationInterval; 
 
 function updateScoreDisplay(score) {
   const scoreContainer = document.querySelector('.score_val');
@@ -105,6 +107,7 @@ function updateScoreDisplay(score) {
 
 // Function to start the game
 function startGame() {
+  console.log(game_state);
     // Initialize game state and any other necessary setup 
     document.getElementById('bird').src = 'src/img/bird1.png';
     document.querySelectorAll('.pipe_sprite_1')
@@ -144,9 +147,6 @@ function startGame() {
     play(); // Assuming you have a play function to start the game loop
 }
 
-// Add event listener to the start button
-document.querySelector('.start-button button').addEventListener('click', startGame);
-
 function endGame() {
   game_state = 'End';
   clearInterval(birdAnimationInterval);
@@ -165,7 +165,6 @@ function endGame() {
   // update best score
   const savedScore = localStorage.getItem('bestScore');
   if (savedScore) {
-    console.log("savedScore=>", savedScore);
     if(savedScore < score_value)
       localStorage.setItem('bestScore', score_value);
   } else {
@@ -280,24 +279,35 @@ function play() {
   }
   requestAnimationFrame(move);
 
-  let bird_dy = 0;
+  
   function apply_gravity() {
     if (game_state != 'Play') return;
     bird_dy = bird_dy + gravity;
+    console.log(bird_dy);
+    
     document.addEventListener('keydown', (e) => {
       if (e.key == 'ArrowUp' || e.key == ' ') {
-        bird_dy = -7.6;
+        bird_dy = -5;
       }
     });
-
-    // Collision detection with bird and
-    // window top and bottom
-
-    if (bird_props.top <= 0 ||
-        bird_props.bottom >= background.bottom) {
-      endGame()
-      return;
+  
+    // Collision detection with bird and window top and bottom
+    // if (bird_props.top <= 0 || bird_props.bottom >= background.bottom) {
+    //   // endGame(); // End the game if collision occurs
+    //   bird.style.top = 0;
+    //   return;
+    // }
+    if(bird_props.top <= 0) {
+      bird.style.top = '0px'; // Set bird position to the top
+      // endGame(); // End the game if collision occurs
+      // return;
+      bird_dy = gravity;
     }
+    if(bird_props.bottom >= background.bottom) {
+      bird.style.top = (background.bottom - bird_props.height) + 'px';
+      bird_dy = -gravity;
+    }
+    
     bird.style.top = bird_props.top + bird_dy + 'px';
     bird_props = bird.getBoundingClientRect();
     requestAnimationFrame(apply_gravity);
