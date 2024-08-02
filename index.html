@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+
+<body>
+    <div class="background"></div>
+    <img class="bird" src="src/img/bird1.png" id="bird">
+    <div class="title">
+        <img src="src/img/Title.png" alt="Title">
+    </div>
+    <div class="message">
+    </div>
+    <div class="score">
+        <img class="score_title" src="src/img/Score Button.png" alt="Score Title" />
+        <span class="score_val"></span>
+    </div>
+    <div class="get-ready">
+        <img src="src/img/Get Ready.png" id="get-ready-image" alt="Get Ready" />
+    </div>
+    <div class="start-button">
+        <button><img src="src/img/Start Button.png" alt="Start Game" /></button>
+    </div>
+    <div class="menu-button">
+        <button>
+            <img src="src/img/Menu Button.png" alt="Menu" />
+        </button>
+    </div>
+    <div class="menu" style="display: none;"> <!-- Initially hidden -->
+        <img src="src/img/Menu.png" alt="Menu Options" class="menu-image" />
+        <img src="" alt="" class="medal-image" id="medal-image" /> <!-- Medal image -->
+        <span class="menu_score_val"></span> <!-- Score value -->
+        <span class="best_score_val"></span> <!-- Score value -->
+    </div>
+    <audio id="game-over-sound" src="src/sound/gameover.mp3" preload="auto"></audio>
+    <audio id="background-music" src="src/sound/flying.mp3" preload="auto" loop></audio>
+    <audio id="score-sound" src="src/sound/flappy_whoosh-43099.mp3" preload="auto"></audio>
+    <script src="src/js/main.js"></script>
+</body>
+
+</html>

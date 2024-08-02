@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.background {
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/BG.png'); /* Add your image path here */
+    background-size: contain; /* Ensures the image covers the entire area */
+    background-position: center;
+}
+
+.title {
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align to the top of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for the width of the element */
+}
+
+.get-ready {
+    position: absolute; /* Position it absolutely */
+    top: calc(50% - 200px); /* Adjust to position above the start button */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the image */
+    z-index: 60;
+}
+
+.get-ready img {
+    width: 600px; /* Set the desired width for the "Get Ready" image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.start-button {
+    position: absolute; /* Position it absolutely */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the width and height of the element */
+    z-index: 60;
+}
+
+.menu-button {
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 60; /* Ensure it appears above other elements */
+}
+
+.menu-button button {
+    background: none; /* Remove default button background */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.menu-button img {
+    height: 70px; /* Adjust size as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.menu {
+    position: fixed; /* Use fixed positioning to center on the screen */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    z-index: 999; /* Ensure it appears above other elements */
+    display: none;
+}
+
+.menu img.menu-image {
+    width: 100%; /* Make the menu image take the full width of the menu */
+    height: auto; /* Maintain aspect ratio */
+    position: relative; /* Set position relative for absolute positioning of child elements */
+}
+
+.medal-image {
+    position: absolute; /* Position the medal image absolutely */
+    top: 35%; /* Adjust this value to position the medal vertically */
+    left: 21%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the medal image */
+    width: 20%; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1000; /* Ensure it appears above the menu image */
+}
+
+.menu_score_val {
+    position: absolute; /* Position the medal image absolutely */
+    top: 30%; /* Adjust this value to position the medal vertically */
+    right: 5%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the medal image */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1000; /* Ensure it appears above the menu image */
+}
+
+.best_score_val {
+    position: absolute; /* Position the medal image absolutely */
+    bottom: 20%; /* Adjust this value to position the medal vertically */
+    right: 5%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the medal image */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1000; /* Ensure it appears above the menu image */
+}
+
+.bird {
+    height: 80px;
+    width: 80px;
+    position: fixed;
+    top: 45vh;
+    left: 35vw;
+    z-index: 100;
+}
+
+.pipe_sprite_1 {
+    position: fixed;
+    top: 40vh;
+    left: 100vw;
+    height: 70vh;
+    width: 6vw;
+    background-image: url('../img/pipe1.png'); /* Add your image path here */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; 
+}
+
+.pipe_sprite_2 {
+    position: fixed;
+    top: 40vh;
+    left: 100vw;
+    height: 70vh;
+    width: 6vw;
+    background-image: url('../img/pipe2.png'); /* Add your image path here */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; 
+}
+
+.btc {
+    position: fixed;
+    top: 40vh;
+    left: 80vw;
+    width: 50px; /* Set the width of the coin */
+    height: 50px; /* Set the height of the coin */
+    background-image: url('../img/btc.png'); /* Add your coin image path here */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; 
+}
+
+.eth {
+    position: fixed;
+    top: 40vh;
+    left: 80vw;
+    width: 50px; /* Set the width of the coin */
+    height: 50px; /* Set the height of the coin */
+    background-image: url('../img/eth.png'); /* Add your coin image path here */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; 
+}
+
+.sol {
+    position: fixed;
+    top: 40vh;
+    left: 80vw;
+    width: 50px; /* Set the width of the coin */
+    height: 50px; /* Set the height of the coin */
+    background-image: url('../img/sol.png'); /* Add your coin image path here */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; 
+}
+
+.cat {
+    position: fixed;
+    top: 40vh;
+    left: 80vw;
+    width: 50px; /* Set the width of the coin */
+    height: 50px; /* Set the height of the coin */
+    background-image: url('../img/cat.png'); /* Add your coin image path here */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; 
+}
+
+.chart {
+    position: fixed;
+    top: 40vh;
+    left: 80vw;
+    width: 50px; /* Set the width of the coin */
+    height: 50px; /* Set the height of the coin */
+    background-image: url('../img/chart.png'); /* Add your coin image path here */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; 
+}
+
+.money {
+    position: fixed;
+    top: 40vh;
+    left: 80vw;
+    width: 50px; /* Set the width of the coin */
+    height: 50px; /* Set the height of the coin */
+    background-image: url('../img/money.png'); /* Add your coin image path here */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; 
+}
+
+.message {
+    position: fixed;
+    z-index: 10;
+    height: 10vh;
+    font-size: 10vh;
+    font-weight: 100;
+    color: black;
+    top: 12vh;
+    left: 20vw;
+    text-align: center;
+}
+
+.score {
+    position: fixed;
+    z-index: 10;
+    height: 10vh;
+    font-size: 10vh;
+    font-weight: 100;
+    color: goldenrod;
+    top: 0;
+    left: 0;
+}
+
+.score_title {
+    height: 70px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.score_val {
+    color: gold;
+}
+
