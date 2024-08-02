@@ -12,16 +12,16 @@ body {
 .background {
     height: 100%;
     width: 100%;
-    background-image: url('../img/BG.png'); /* Add your image path here */
-    background-size: contain; /* Ensures the image covers the entire area */
+    background-image: url('../img/BG.png');
+    background-size: contain; 
     background-position: center;
 }
 
 .title {
-    position: absolute; /* Position it absolutely */
-    top: 0; /* Align to the top of the viewport */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for the width of the element */
+    position: absolute;
+    top: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
 }
 
 .get-ready {
@@ -235,3 +235,13 @@ body {
     color: gold;
 }
 
+.social-links {
+    position: fixed;
+    z-index: 10;
+    top: 15vh;
+    left: 3vw;
+    display: flex; /* Use flexbox to arrange items in a row */
+    flex-direction: column;
+    justify-content: center; /* Center the icons horizontally */
+    gap: 30px;
+}

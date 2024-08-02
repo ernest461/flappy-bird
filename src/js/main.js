@@ -107,7 +107,6 @@ function updateScoreDisplay(score) {
 
 // Function to start the game
 function startGame() {
-  console.log(game_state);
     // Initialize game state and any other necessary setup 
     document.getElementById('bird').src = 'src/img/bird1.png';
     document.querySelectorAll('.pipe_sprite_1')
@@ -283,7 +282,6 @@ function play() {
   function apply_gravity() {
     if (game_state != 'Play') return;
     bird_dy = bird_dy + gravity;
-    console.log(bird_dy);
     
     document.addEventListener('keydown', (e) => {
       if (e.key == 'ArrowUp' || e.key == ' ') {
@@ -299,8 +297,6 @@ function play() {
     // }
     if(bird_props.top <= 0) {
       bird.style.top = '0px'; // Set bird position to the top
-      // endGame(); // End the game if collision occurs
-      // return;
       bird_dy = gravity;
     }
     if(bird_props.bottom >= background.bottom) {
