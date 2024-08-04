@@ -1,8 +1,8 @@
 // Background scrolling speed
-let move_speed = 5;
+let move_speed = 4;
   
 // Gravity constant value
-let gravity = 0.2;
+let gravity = 0.1;
 
 const coins = ['eth', 'btc', 'sol', 'cat', 'chart', 'money'];
 
@@ -170,6 +170,7 @@ function endGame() {
     localStorage.setItem('bestScore', score_value);
   }
   score_value = 0;
+  bird_dy = 0;
 }
 
 function play() {
@@ -285,7 +286,7 @@ function play() {
     
     document.addEventListener('keydown', (e) => {
       if (e.key == 'ArrowUp' || e.key == ' ') {
-        bird_dy = -5;
+        bird_dy = -4;
       }
     });
   
