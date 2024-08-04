@@ -245,3 +245,7 @@ body {
     justify-content: center; /* Center the icons horizontally */
     gap: 30px;
 }
+
+.icon-radius {
+    border-radius: 10px;
+}
